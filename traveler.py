@@ -18,7 +18,7 @@ def showDists(loc):
         print (star[i] + ":" + str(locx[i])+", " + str(locy[i])+": "+str(dist(i,loc)))
 
 def showCourse():
-    choices = "123456789"
+    choices = "123456789"[0:len(star)]
     for i in range (len(star)):
         print (str(1+i)+": "+star[i])
     print ()
@@ -145,12 +145,19 @@ def shipdisplay():
             
 (location,cmds)=where(px,py)
 print("Current location: "+location)
-
+clicks = -1
 while True:
   
   
     print("Next action? "+cmds+"?")
     dir = intpt(cmds)
+    clicks = clicks - 1
+    if clicks > 0:
+        print ("moves  to dest: "+str(clicks))
+    if clicks == 0:
+        Where = destination
+        print ("ALERT! Arrivived at " + star[destination])
+
     if dir in "nsew":
         chgloc(dir)
         (location,cmds)=where(px,py)
@@ -164,5 +171,6 @@ while True:
         if dir == "C":
             #set destination
             destination = showCourse()
-
-
+            clicks = random.randrange(1,10,1)
+            print ("moves  to dest: "+str(clicks))
+            
