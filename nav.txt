@@ -20,7 +20,7 @@
     |    |      |    |
     |    `------'    |
     "-----------------
-
+M=map D=distance C=set Course
 
 
 
