@@ -144,7 +144,7 @@ def shipdisplay():
         print("Traveling from "+star[Where] + " to " + star[destination])
             
 (location,cmds)=where(px,py)
-print("Current location: "+location)
+print("In Traveler "+location)
 clicks = -1
 while True:
   
@@ -161,7 +161,7 @@ while True:
     if dir in "nsew":
         chgloc(dir)
         (location,cmds)=where(px,py)
-        print("Current location: "+location)
+        print("In Traveler "+location)
     else:
         if dir == "M":
             printMap(locx,locy,map,star,Where)
